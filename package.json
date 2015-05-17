@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "gulp && npm run install:plugins",
+    "build": "gulp",
+    "watch": "gulp watch",
     "install:browser": "cordova platform add browser",
     "install:android": "cordova platform add android",
     "install:ios": "cordova platform add ios",
