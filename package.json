@@ -5,7 +5,7 @@
   "main": "www/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "gulp && npm run install:plugins",
+    "postinstall": "bower install && gulp && npm run install:plugins",
     "build": "gulp",
     "watch": "gulp watch",
     "install:browser": "cordova platform add browser",
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/datkinson/bastet-app",
   "dependencies": {
+    "bower": "^1.4.1",
     "cordova": "^5.0.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.3.0",
