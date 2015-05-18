@@ -1,0 +1,102 @@
+    .icon {
+      height: 40px;
+      width: 40px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: auto 70%;
+    }
+    .icon.weather {
+      background-color: #29abe2;
+      background-image: url(../assets/img/app-icons/weather.png);
+      background-size: 70% auto;
+    }
+    .icon.mail {
+      background-color: #52c5d0;
+      background-image: url(../assets/img/app-icons/mail.png);
+      background-size: 70% auto;
+    }
+    .icon.music {
+      background-color: #f38133;
+      background-image: url(../assets/img/app-icons/music.png);
+    }
+    .icon.browser {
+      background-color: #ed453a;
+      background-image: url(../assets/img/app-icons/browser.png);
+    }
+    .icon.app {
+      background-color: #6ec05c;
+      background-image: url(../assets/img/app-icons/app.png);
+    }
+    /* Border Radius for each OS: */
+    .isiOS .icon {
+      border-radius: 10px;
+    }
+    .isAndroid .icon {
+      border-radius: 50%;
+    }
+    .isWindows .icon {
+      border-radius: 0;
+    }
+    .isWindows p {
+      color: #fff;
+    }
+    
+    /* Popup Demo Styles */
+    #popupMessageTarget {
+      opacity: 0;
+      font-size: 12pt;
+      line-height: 14pt;
+      font-family: 'HelveticaNeue-Light';
+      padding: 0 15px;
+      margin: 0;
+    }
+    .animatePopupMessage {
+      -webkit-animation-duration: 2s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-name: updatePopupMessage;
+    }
+    
+    @-webkit-keyframes updatePopupMessage {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes updatePopupMessage {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .popover-buttons {
+      margin-bottom: 20px;
+      padding: 0 40px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-pack: distribute !important;
+      -webkit-justify-content: space-around !important;
+      justify-content: space-around !important;
+    }
+    .isWindows section > .popover-buttons > button:first-of-type,
+    .isWindows section > .popover-buttons > button:last-of-type {
+      background-color: #000;
+      border-color: #fff;
+      border-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+    .isWindows section > .popover-buttons > button:hover {
+      background-color: #fff;
+      color: #000;
+      border-color: #000 !important;
+    }
+    .isAndroid .popover-buttons > button {
+      border-radius: 0 !important;
+    }
+    .isWindows #switches li.comp > div {
+      -ms-flex: 1;
+      flex: 1;
+    }

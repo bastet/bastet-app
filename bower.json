@@ -1,0 +1,21 @@
+{
+  "name": "bastet-app",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bastet/bastet-app",
+  "authors": [
+    "Daniel Atkinson <hourd.tasa@gmail.com>"
+  ],
+  "description": "A companion application for the Bastet home automation system",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chocolatechip-ui": "~3.8.0"
+  }
+}

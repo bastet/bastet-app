@@ -24,7 +24,10 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['app/scripts/default.js',
+  return gulp.src(['node_modules/jquery/dist/jquery.js',
+      'app/libs/chocolatechip-ui/dist/chui-3.8.0.min.js',
+      'app/scripts/test.js',
+      'app/scripts/default.js',
     ])
     .pipe(plumber())
     .pipe(concat('app.js'))
@@ -54,13 +57,38 @@ gulp.task('html', function () {
     .pipe(gulp.dest('www'));
 });
 
+gulp.task('overrides', function () {
+  gulp.src('app/libs/chocolatechip-ui/dist/chui-android*.min.css')
+.pipe(plumber())
+.pipe(concat('chui.css'))
+.pipe(newer('app/libs/chocolatechip-ui/dist/chui-android*.min.css'))
+.pipe(gulp.dest('merges/android/overrides'));
+
+  gulp.src('app/libs/chocolatechip-ui/dist/chui-win*.min.css')
+.pipe(plumber())
+.pipe(concat('chui.css'))
+.pipe(newer('app/libs/chocolatechip-ui/dist/chui-win*.min.css'))
+.pipe(gulp.dest('merges/windows/overrides'));
+
+  gulp.src('app/libs/chocolatechip-ui/dist/chui-ios*.min.css')
+.pipe(plumber())
+.pipe(concat('chui.css'))
+.pipe(newer('app/libs/chocolatechip-ui/dist/chui-ios*.min.css'))
+.pipe(gulp.dest('merges/ios/overrides'));
+
+  return gulp.src('app/overrides/**/*')
+    .pipe(plumber())
+    .pipe(newer('app/overrides/**/*'))
+    .pipe(gulp.dest('www/overrides'));
+});
+
 gulp.task('clean', function() {
   return gulp.src(['www/styles', 'www/scripts', 'www/assets/img'], { read: false })
     .pipe(rimraf());
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'images', 'html');
+    gulp.start('styles', 'scripts', 'images', 'html', 'overrides');
 });
 
 gulp.task('watch', function() {
@@ -68,6 +96,7 @@ gulp.task('watch', function() {
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/assets/img/**/*', ['images']);
   gulp.watch('app/html/**/*', ['html']);
+  gulp.watch('app/overrides/**/*', ['overrides']);
 });
 
 gulp.task('watch-styles', function() {
