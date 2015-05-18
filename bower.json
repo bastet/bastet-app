@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "chocolatechip-ui": "~3.8.0"
+    "chocolatechip-ui": "~3.8.0",
+    "winstore-jscompat": "https://github.com/MSOpenTech/winstore-jscompat.git",
+    "fastclick": "~1.0.6"
   }
 }

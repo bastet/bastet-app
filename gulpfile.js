@@ -24,7 +24,9 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['node_modules/jquery/dist/jquery.js',
+  return gulp.src(['app/libs/fastclick/lib/fastclick.js',
+      'app/libs/winstore-jscompat/winstore-jscompat.js',
+      'node_modules/jquery/dist/jquery.js',
       'app/libs/chocolatechip-ui/dist/chui-3.8.0.min.js',
       'app/scripts/test.js',
       'app/scripts/default.js',
