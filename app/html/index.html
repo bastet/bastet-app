@@ -24,6 +24,9 @@
         <li data-goto="login" class='nav'>
           <h3>Login</h3>
         </li>
+        <li data-goto="gps" class='nav'>
+          <h3>Gps</h3>
+        </li>
       </ul>
     </section>
   </article>
@@ -59,5 +62,21 @@
           <button>Submit</button>
     </div>
   </article>
+  <nav>
+    <button class='back'>Home</button>
+    <h1>Home</h1>
+  </nav>
+  <article id='gps' class='next'>
+    <section>
+      <h1>GPS</h1>
+      <div class='horizontal centered'>
+        <div class='segmented'>
+          <div id="geolocation"></div>
+          <div id="geolocation-error"></div>
+        </div>
+      </div>
+    </section>
+  </article>
+  <script type="text/javascript" src="cordova.js"></script>
 </body>
 </html>
